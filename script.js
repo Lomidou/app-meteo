@@ -63,9 +63,8 @@ cityButton.addEventListener("click", (e) =>{
     getImage();
 })
 
-const uniqueCitiesSet = new Set();
-
 async function suggestionList(inputValue) {
+
     const suggestionListURL = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=5&appid=${API_KEY}`;
 
     try {
@@ -82,34 +81,29 @@ async function suggestionList(inputValue) {
     }
 }
 
-function displaySuggestions(data) {
-    const autocompleteList = document.getElementById('autocompleteList');
-    autocompleteList.innerHTML = '';
+function displaySuggestions(data){
+    const autocompleteList = document.getElementById('autocompleteList')
+    autocompleteList.innerHTML = ''
 
     data.forEach(city => {
-        if (!uniqueCitiesSet.has(city.name)) {
-            const suggestionItem = document.createElement('div');
-            suggestionItem.textContent = `${city.name}, ${city.country}`;
-            suggestionItem.addEventListener('click', () => selectCity(city.name, city.country));
-            autocompleteList.appendChild(suggestionItem);
-            uniqueCitiesSet.add(city.name);
-        }
-    });
+        const suggestionItem = document.createElement('div');
+        suggestionItem.textContent = city.name;
+        suggestionItem.addEventListener('click', () => selectCity(city.name));
+        autocompleteList.appendChild(suggestionItem);
+    })
 }
 
 const cityInput = document.getElementById('cityInput');
 cityInput.addEventListener('input', () => suggestionList(cityInput.value));
 
-function selectCity(cityName, country) {
+function selectCity(cityName) {
     const cityInput = document.getElementById('cityInput');
-    cityInput.value = `${cityName}, ${country}`;
+    cityInput.value = cityName;
     document.getElementById('autocompleteList').innerHTML = '';
-    uniqueCitiesSet.clear();
 }
 
-
 const getWeatherDetails = (cityName, lat, lon) => {
-    const Weather_api_URL = `http:/api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    const Weather_api_URL = `https:/api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     fetch(Weather_api_URL)
     .then(response => {
         if(!response.ok){
@@ -146,7 +140,7 @@ const GetCityCoordinates = () => {
     let cityName = inputCity.value.trim()
     if (!cityName) return;
 
-    let Geocoding_api_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`
+    let Geocoding_api_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`
 
     fetch(Geocoding_api_URL)
     .then(response => {
@@ -171,7 +165,7 @@ const GetUserCoordinates = () => {
     navigator.geolocation.getCurrentPosition(
         position =>{
             const { latitude, longitude } = position.coords;
-            const Reverse_Geocoding_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`
+            const Reverse_Geocoding_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`
             fetch(Reverse_Geocoding_URL)
             .then(response => {
                 if (!response.ok) {
@@ -212,11 +206,9 @@ inputCity.addEventListener("keydown", (e) => {
         page = 1;
         getImage();
         GetCityCoordinates();
-        autocompleteList.innerHTML = '';
+        autocompleteList.innerHTML = "";
     }
 });
-
-
 
 currentLocation.addEventListener("click", GetUserCoordinates)
 cityButton.addEventListener("click", GetCityCoordinates)

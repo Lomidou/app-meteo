@@ -70,6 +70,8 @@ h6 {
   .card {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .card button {
