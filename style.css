@@ -1,0 +1,277 @@
+:root {
+  --primary-color: rgba(104, 126, 255, 1);
+  --secondary-color: rgba(227, 234, 233, 0.3);
+}
+
+.darkmode {
+  --primary-color: #212121;
+  --secondary-color: rgba(85, 85, 85, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgb(53, 51, 51);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-color);
+  border-radius: 25px;
+  margin: 200px 10% 50%;
+  padding: 20px;
+  overflow-x: hidden;
+}
+@media (max-width: 900px) {
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.card button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.card h1 {
+  text-align: center;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  width: 100%;
+  padding: 10px;
+}
+.card .search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  margin: 15px;
+  padding: 10px;
+}
+@media (max-width: 900px) {
+  .card .search {
+    width: 100%;
+    margin: 0;
+    margin-top: 15px;
+  }
+}
+.card h2 {
+  font-size: 18px;
+  text-align: left;
+  margin: 10px;
+}
+.card input {
+  width: 100%;
+  border-radius: 25px;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  margin-right: 10px;
+}
+.card button {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 15px;
+  border: 0;
+  outline: 0;
+  margin-top: 25px;
+  cursor: pointer;
+}
+.card button img {
+  width: 20px;
+  background-color: var(--secondary-color);
+}
+.card button {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 15px;
+  border: 0;
+  outline: 0;
+  margin-top: 25px;
+  cursor: pointer;
+}
+.card .separator {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  margin: 25px 0 0;
+}
+.card .container {
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 900px) {
+  .card .container {
+    flex-direction: column;
+  }
+}
+
+.weather {
+  width: 60%;
+}
+@media (max-width: 900px) {
+  .weather {
+    width: 100%;
+  }
+}
+
+.weather-oneday {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  margin: 15px;
+  padding: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  gap: 15px;
+}
+@media (max-width: 900px) {
+  .weather-oneday {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+}
+.weather-oneday .details {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+}
+.weather-oneday img {
+  height: 50%;
+  align-self: center;
+}
+.weather-oneday h4 {
+  font-weight: 400;
+}
+
+.future-weather {
+  display: flex;
+  flex-direction: column;
+}
+.future-weather h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card-weather {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  padding: 10px;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .card-weather {
+    align-items: center;
+    flex-wrap: wrap;
+    height: -moz-max-content;
+    height: max-content;
+    width: 60%;
+  }
+}
+.card-weather h3 {
+  font-size: 12px;
+  font-weight: 600;
+}
+.card-weather h4 {
+  font-size: 10px;
+  font-weight: 400;
+}
+.card-weather img {
+  height: 20%;
+  width: 20%;
+  align-self: center;
+}
+
+.icon {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 10%;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.image #image {
+  width: 200px;
+  height: 200px img;
+  height-border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */

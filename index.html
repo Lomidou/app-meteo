@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Mon application météo</h1>
+        <div class="image">
+            <div id="image"></div>
+        </div>
+        <div class="container">
+            <div class="search">
+                <h2>Entrez le nom d'une ville</h2>
+                <input id="cityInput"class="city-input" type="text" placeholder="New York, Rome, Berlin...">
+                <div id="autocompleteList" class="autocomplete-items"></div>
+                <button id="search"><img src="images/search.png" alt="searching button"></button>
+                <div class="separator"></div>
+                <button id="current-location">Votre localisation</button>
+            </div>
+            <div class="weather">
+                <div class="weather-oneday">
+                    <div class="details" id="details">
+                        <h3></h3>
+                        <h4>Température : °C</h4>
+                        <h4>Humidité : %</h4>
+                        <h4>Vent : km/h</h4>
+                        <div id="image"></div>
+                    </div>
+                </div>
+                <div class="future-weather">
+                    <h2>La météo des prochains jours</h2>
+                    <ul class="cards" id="cards">
+                        <li class="card-weather">
+                            <div class="details">
+                                <h3></h3>
+                                <h4>Temp. : °C</h4>
+                                <h4>Hum. : %</h4>
+                                <h4>Vent : km/h</h4>
+                            </div>
+                        </li>
+                        <li class="card-weather">
+                            <div class="details">
+                                <h3></h3>
+                                <h4>Temp. : °C</h4>
+                                <h4>Hum. : %</h4>
+                                <h4>Vent : km/h</h4>
+                            </div>
+                        </li>
+                        <li class="card-weather">
+                            <div class="details">
+                                <h3></h3>
+                                <h4>Temp. : °C</h4>
+                                <h4>Hum. : %</h4>
+                                <h4>Vent : km/h</h4>
+                            </div>
+                        </li>
+                        <li class="card-weather">
+                            <div class="details">
+                                <h3></h3>
+                                <h4>Temp. : °C</h4>
+                                <h4>Hum. : %</h4>
+                                <h4>Vent : km/h</h4>
+                            </div>
+                        </li>
+                        <li class="card-weather">
+                            <div class="details">
+                                <h3></h3>
+                                <h4>Temp. : °C</h4>
+                                <h4>Hum. : %</h4>
+                                <h4>Vent : km/h</h4>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <img src="./images/moon.png" rel="icon" id="icon" class="icon">
+    </div>
+
+</body>
+
+</html>
