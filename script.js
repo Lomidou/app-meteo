@@ -21,7 +21,7 @@ let createCard = (cityName, weatherCard, index) => {
             <h4>Humidité : ${weatherCard.main.humidity} %</h4>
             <h4>Vent : ${Math.round(weatherCard.wind.speed *3.6)} km/h</h4>
         </div>
-        <img src="http://openweathermap.org/img/wn/${weatherCard.weather[0].icon}@2x.png" alt="weather-icons">
+        <img src="https://openweathermap.org/img/wn/${weatherCard.weather[0].icon}@2x.png" alt="weather-icons">
         `
     }
     else{ 
@@ -33,7 +33,7 @@ let createCard = (cityName, weatherCard, index) => {
                 <h4>Hum. : ${weatherCard.main.humidity} %</h4>
                 <h4>Vent : ${Math.round(weatherCard.wind.speed * 3.6)} km/h</h4>
             </div>
-            <img src="http://openweathermap.org/img/wn/${weatherCard.weather[0].icon}@2x.png" alt="weather-icons">
+            <img src="https://openweathermap.org/img/wn/${weatherCard.weather[0].icon}@2x.png" alt="weather-icons">
             </li>`
         }
 }
@@ -103,7 +103,7 @@ function selectCity(cityName) {
 }
 
 const getWeatherDetails = (cityName, lat, lon) => {
-    const Weather_api_URL = `https:/api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    const Weather_api_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     fetch(Weather_api_URL)
     .then(response => {
         if(!response.ok){
